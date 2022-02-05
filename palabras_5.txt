@@ -256,7 +256,6 @@ amito
 amole
 amomo
 ampay
-ampère
 ampla
 amplo
 ampón
@@ -1835,8 +1834,6 @@ fácil
 facón
 facto
 faena
-‒́faga
-‒́fago
 fagot
 faina
 faino
@@ -1944,7 +1941,6 @@ figle
 figón
 fijar
 fijón
-‒́fila
 filar
 filet
 filfa
@@ -1953,7 +1949,6 @@ filin
 filín
 filis
 filme
-‒́filo
 filón
 final
 finar
@@ -2013,13 +2008,11 @@ folio
 folla
 foluz
 fomes
-‒́fona
 fonda
 fondo
 fonil
 fonio
 fonje
-‒́fono
 foque
 foral
 foras
@@ -2120,10 +2113,8 @@ gallo
 galón
 galop
 galúa
-‒́gama
 gamba
 gamma
-‒́gamo
 gamón
 gañán
 ganar
@@ -3978,7 +3969,6 @@ podal
 podar
 poder
 podio
-‒́podo
 podón
 podre
 poema
@@ -4073,8 +4063,6 @@ provo
 pruna
 pruno
 psoas
-‒́ptera
-‒́ptero
 puado
 púber
 pubes
@@ -5363,7 +5351,6 @@ vulto
 vulva
 vusco
 weber
-wi fi
 xenón
 xinca
 xiote
