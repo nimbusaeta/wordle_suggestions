@@ -1,8 +1,12 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 import unittest
 
 # regex para limpiar diccionario:
 # ^[\wñáéíóúüÑÁÉÍÓÚÜ --,.']{6,}$\n
 # ^[\wñáéíóúüÑÁÉÍÓÚÜ --,.']{0,4}$\n
+# ^.*[\.,/\-‒́' è].*$\n
 
 def match_one_letter(position, letter, wordlist):
 	suggestions = set()
@@ -61,6 +65,27 @@ def all(colors, vocab):
 	vocab = match_letters(greenlist, vocab)
 	return vocab
 
+def preguntar_idioma():
+	return input("¿En qué idioma estás jugando? Escribe 'es' o 'en': ")
+
+def preguntar():
+	palabra = input("¿Qué palabra has puesto? ")
+	colores = input("¿Qué secuencia de colores te ha salido? Escríbela así: GVAVG (G=gris, V=verde, A=amarillo) ")
+
+	result = [(palabra[0], colores[0]),
+			(palabra[1], colores[1]),
+			(palabra[2], colores[2]),
+			(palabra[3], colores[3]),
+			(palabra[4], colores[4])]
+	return result
+
+def leer_vocab(idioma):
+	archivo_idioma = 'words_5.txt'
+	if idioma == 'es':
+		archivo_idioma = 'palabras_5.txt'
+	with open(archivo_idioma, 'r', encoding='UTF-8') as f:
+		return f.readlines()
+
 class TestWord(unittest.TestCase):
 	def test_match_one_letter(self):
 		vocab = {'oreas', 'oblea', 'libro', 'mural'}
@@ -95,11 +120,21 @@ class TestWord(unittest.TestCase):
 		result = all(colors, vocab)
 		self.assertSetEqual(result, {'cubos'})
 
-result = [('o', 'A'), ('r', 'G'), ('e', 'G'), ('a', 'A'), ('s', 'A')]
-with open('palabras_5.txt', 'r', encoding='UTF-8') as f:
-	words = f.readlines()
-	suggestions = all(result, words)
-print(suggestions)
+### PROGRAMA
+suggestions = leer_vocab(preguntar_idioma())
+suggestions = (s.lower() for s in suggestions)
+
+continuar = True
+while continuar:
+	result = preguntar()
+	suggestions = all(result, suggestions)
+	for suggestion in suggestions:
+		print(suggestion.strip())
+
+	if input("¿Continuar? Escribe 's' para seguir o cualquier otra cosa para salir: ") != "s":
+		continuar = False
+
+
 
 if __name__ == '__main__':
 	unittest.main()
