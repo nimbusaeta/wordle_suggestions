@@ -66,7 +66,15 @@ def all(colors, vocab):
 	return vocab
 
 def preguntar_idioma():
-	return input("¿En qué idioma estás jugando? Escribe 'es' o 'en': ")
+	idiomas_soportados = {"español": "es", "inglés": "en"}
+	idioma = ""
+	print("De momento este programa soporta los siguientes idiomas:")
+	for idioma, código in idiomas_soportados.items():
+		print(idioma, " (código: ", código, ")", sep="")
+	print("¿En qué idioma estás jugando?")
+	while idioma not in idiomas_soportados.values():
+		idioma = input("Escribe el código correspondiente: ")
+	return idioma
 
 def preguntar():
 	palabra = input("¿Qué palabra has puesto? ")
