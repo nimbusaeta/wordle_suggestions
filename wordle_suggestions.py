@@ -140,7 +140,7 @@ while continuar:
 	for suggestion in suggestions:
 		print(suggestion.strip())
 
-	if input("¿Continuar? Escribe 's' para seguir o cualquier otra cosa para salir: ") != "s":
+	if input("¿Continuar? Escribe 's' para salir o cualquier otra cosa para continuar: ") == "s":
 		continuar = False
 
 
