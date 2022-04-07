@@ -88,9 +88,9 @@ def preguntar():
 	return result
 
 def leer_vocab(idioma):
-	archivo_idioma = 'words_5.txt'
+	archivo_idioma = 'en.txt'
 	if idioma == 'es':
-		archivo_idioma = 'palabras_5.txt'
+		archivo_idioma = 'es.txt'
 	with open(archivo_idioma, 'r', encoding='UTF-8') as f:
 		return f.readlines()
 
@@ -136,6 +136,7 @@ continuar = True
 while continuar:
 	result = preguntar()
 	suggestions = all(result, suggestions)
+	print("Todas estas palabras cumplen los requisitos:")
 	for suggestion in suggestions:
 		print(suggestion.strip())
 
